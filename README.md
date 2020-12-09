@@ -312,6 +312,15 @@ git remote add origin https://github.com/$GITHUB_USERNAME/intersight_iac_demo_se
 git push -u origin main
 ```
 
+### Configuration
+
+The Jenkinsfile(s) in both pipelines include most of the variables used by Terraform.<br>
+You may want to customize the following - or not :) <br>
+
+- TF\_VAR\_resource_prefix: Each resource created in Intersight will have this prefix
+- TV\_VAR\_organization: The name of the Intersight organization you want your resources in. Most likely is going to be 'default' but in some cases you may want to use an alternative organization
+
+
 ### Clean-up
 
 To clean-up objects created in Intersight, just run the security and the compute pipelines (in this order) and when it asks for confirmation, click on 'Abort'. It will execute a ```terraform destroy -auto-approve``` and everything will disappear.<br>
