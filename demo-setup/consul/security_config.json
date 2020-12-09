@@ -1,0 +1,4 @@
+{
+    "ssh_port": "22",
+    "ssh_timeout": "3600"
+}

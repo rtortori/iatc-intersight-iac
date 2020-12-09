@@ -1,0 +1,9 @@
+{
+  "server_profile_action": "No-op",
+  "bios_terminal_type": "vt100",
+  "ntp_servers": ["ntp.esl.cisco.com", "time-a-g.nist.gov", "time-b-g.nist.gov"],
+  "ntp_timezone": "Europe/Rome",
+  "syslog_min_severity": "emergency",
+  "syslog_remote_client": "10.10.10.10",
+  "syslog_remote_client_port": 514
+}

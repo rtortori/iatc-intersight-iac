@@ -1,0 +1,19 @@
+global:
+  domain: consul
+  datacenter: dc1
+  acls:
+    manageSystemACLs: true
+
+server:
+  replicas: 1
+  bootstrapExpect: 1
+
+client:
+  enabled: true
+  grpc: true
+
+ui:
+  enabled: true
+
+connectInject:
+  enabled: false
