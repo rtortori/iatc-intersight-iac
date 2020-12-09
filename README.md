@@ -25,7 +25,6 @@ TODO
 - A [GitHub personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token)
 
 ### Installation
-##### It should take about 30 minutes to setup the demo, also depending on your internet connectivity
 
 Clone this repository
 
@@ -92,7 +91,7 @@ helm install vault hashicorp/vault \
 ```
 
 Ensure *all* pods are in the 'Running' state. They also need to show '1/1'<br>
-If some pods are not ready yet, just wait a few more minutes and retry the command<br>
+If some pods are not ready yet, just wait a few more minutes and retry the command. It may take some time depending on your internet connection<br>
 
 ```
 kubectl get pods
@@ -186,8 +185,6 @@ Set GitHub and Vault Credentials in **Jenkins**. <br>
 For this demo we will use the same token, but in production you will have policies and different tokens
 
 ```
-JENKINS_CRUMB=$(curl --silent --cookie-jar $COOKIE_JAR $JENKINS_URL'/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,":",//crumb)' -u $JENKINS_USERNAME:$JENKINS_PASSWORD)
-
 # GH credentials
 curl -X POST "http://$JENKINS_USERNAME:$JENKINS_PASSWORD@127.0.0.1:8080/credentials/store/system/domain/_/createCredentials" --cookie $COOKIE_JAR  -H $JENKINS_CRUMB \
 --data-urlencode 'json={
