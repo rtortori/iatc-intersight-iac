@@ -1,6 +1,6 @@
 # Cisco Intersight Infrastructure-as-Code Demo
 
-Disclaimer: <br>
+**Disclaimer**<br>
 
 This is NOT an official Cisco application and comes with absolute NO WARRANTY!<br>
 Please check the [LICENSE](https://github.com/rtortori/iatc-intersight-iac/blob/main/LICENSE-CISCO.md) for further information.<br>
@@ -10,7 +10,21 @@ This demo has been largely inspired by the great work done by [Ned Bellavance](h
 
 ### Introduction
 
-TODO
+The scope of this project is to demonstrate how Cisco Intersight can fit an existing CI/CD environment with centralized secret management and multiple teams sharing resources.<br>
+This repository contains the code and the instructions to setup the whole demo on your laptop.<br>
+<br>
+At the end of the setup you will have:
+
+- Two **GitHub** private repositories, one for the Compute team, one for the Security Team
+- A **Jenkins** instance, preconfigured with two pipelines and the necessary credentials and plugins
+- A **Vault** instance configured to authenticate on behalf of Consul. This Vault instance will also store your **Intersight** credentials
+- A **Consul** instance that stores both compute and security configuration parameters and remote state 
+
+**Notes**<br>
+
+- Once the setup is complete, you can "pause" it to free resources with ```minikube stop``` <br>
+- You can resume the demo setup with ```minikube start```. However, you are required to recreate the port-forwarding rules (see below)<br>
+- The first time you run the pipelines, it may take up to 20 minutes as Jenkins will need to download the container agent images for the first time. Subsequent runs should happen much faster. The same is true with the installation of Vault, Consul and Jenkins as minikube will need to download the images first
 
 ### Prerequisites
 
@@ -297,6 +311,40 @@ git branch -M main
 git remote add origin https://github.com/$GITHUB_USERNAME/intersight_iac_demo_security.git
 git push -u origin main
 ```
+
+### Clean-up
+
+To clean-up objects created in Intersight, just run the security and the compute pipelines (in this order) and when it asks for confirmation, click on 'Abort'. It will execute a ```terraform destroy -auto-approve``` and everything will disappear.<br>
+
+To clean-up the GitHub repositories and delete all traces of this demo
+
+```
+cd demo-setup/github && terraform destroy -auto-approve
+
+minikube stop 
+minikube delete
+
+unset INTERSIGHT_API_TOKEN
+unset GITHUB_TOKEN
+unset GITHUB_USERNAME
+unset CONSUL_HTTP_TOKEN
+unset JENKINS_USERNAME
+unset JENKINS_PASSWORD
+unset JENKINS_CRUMB
+unset COOKIE_JAR
+unset VAULT_TOKEN
+unset VAULT_ADDR
+unset GLOB_MGT_TOKEN
+```
+
+
+
+
+
+
+
+
+
 
 
 
