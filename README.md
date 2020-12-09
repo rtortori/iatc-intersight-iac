@@ -229,7 +229,7 @@ curl -X POST "http://$JENKINS_USERNAME:$JENKINS_PASSWORD@127.0.0.1:8080/credenti
 You will now need to login to **Jenkins**. Paste the following command and connect with your browser
 
 ```
-echo "Login to Jenkins at http://$JENKINS_URL\nUsername: $JENKINS_USERNAME \nPassword: $JENKINS_PASSWORD"
+echo "Login to Jenkins at $JENKINS_URL\nUsername: $JENKINS_USERNAME \nPassword: $JENKINS_PASSWORD"
 ```
 
 Once connected, go to:
