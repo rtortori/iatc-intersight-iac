@@ -25,6 +25,7 @@ TODO
 - A [GitHub personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token)
 
 ### Installation
+##### It should take about 30 minutes to setup the demo, also depending on your internet connectivity
 
 Clone this repository
 
@@ -69,7 +70,7 @@ Deploy **Consul**
 ```
 helm repo add hashicorp https://helm.releases.hashicorp.com
 helm repo update
-helm install -f ./demo-setup/consul/consul_values.yaml consul hashicorp/consul --version 1.9.0
+helm install -f ./demo-setup/consul/consul_values.yaml consul hashicorp/consul
 ```
 
 Deploy **Jenkins**
