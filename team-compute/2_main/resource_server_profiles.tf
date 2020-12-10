@@ -19,7 +19,7 @@ resource "intersight_server_profile" "my_server_profile" {
 
   tags {
     key   = "Project"
-    value = "Rick Terraform Tests"
+    value = "Intersight IaC Demo"
   }
 
   tags {

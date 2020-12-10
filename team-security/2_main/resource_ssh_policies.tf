@@ -22,7 +22,7 @@ resource "intersight_ssh_policy" "ssh_policy_1" {
 
   tags {
     key   = "Project"
-    value = "Rick Terraform Tests"
+    value = "Intersight IaC Demo"
   }
 
   tags {

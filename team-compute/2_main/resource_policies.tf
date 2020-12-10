@@ -33,7 +33,7 @@ resource "intersight_bios_policy" "bios_policy_1" {
 
   tags {
     key   = "Project"
-    value = "Rick Terraform Tests"
+    value = "Intersight IaC Demo"
   }
 
   tags {
@@ -73,7 +73,7 @@ resource "intersight_ntp_policy" "ntp_pol_1" {
 
   tags {
     key   = "Project"
-    value = "Rick Terraform Tests"
+    value = "Intersight IaC Demo"
   }
 
   tags {
@@ -116,7 +116,7 @@ resource "intersight_syslog_policy" "syslog_policy_1" {
 
   tags {
     key   = "Project"
-    value = "Rick Terraform Tests"
+    value = "Intersight IaC Demo"
   }
 
   tags {
