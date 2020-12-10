@@ -40,7 +40,12 @@ At the end of the setup you will have:
 
 ### Installation
 
-Clone this repository
+**Warning**: This demo will create policies and a server profile. **This profile will be associated to an existing server.**<br>
+In Intersight, identify a server you can use and take note of its management IP.<br>
+
+**Warning: READ before you copy/paste! Some steps require manual population of environment variables based on your setup**<br>
+
+From a terminal, clone this repository
 
 ```
 git clone https://github.com/rtortori/iatc-intersight-iac.git
@@ -56,6 +61,13 @@ Copy your **Intersight** Secret in the demo-setup/intersight directory (replace 
 
 ```
 cp /path/to/SecretKey.txt demo-setup/intersight/SecretKey.txt
+```
+
+In the 'team-compute/2\_main/3\_datasources.tf' file, replace "192.168.30.22" the the management IP of the server you want to associate the server profile to
+
+```
+export SERVER_MGT_IP="server.mgt.ip.address"
+sed -i '' -e "s/192.168.30.22/$SERVER_MGT_IP/g" team-compute/2_main/3_datasources.tf
 ```
 
 Set the **Intersight** API key as an environment variable
