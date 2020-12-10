@@ -23,7 +23,7 @@ At the end of the setup you will have:
 **Notes**<br>
 
 - Once the setup is complete, you can "pause" it to free resources with ```minikube stop``` <br>
-- You can resume the demo setup with ```minikube start```. However, you are required to recreate the port-forwarding rules (see below)<br>
+- You can resume the demo setup with ```minikube start```. However, you are required to recreate the port-forwarding rules as well as Vault configuration. Since we are running in dev mode, once the pod restarts, it losts all data. (see below to recreate the port-forwarding rules and Vault configuration)<br>
 - The first time you run the pipelines, it may take up to 20 minutes as Jenkins will need to download the container agent images for the first time. Subsequent runs should happen much faster. The same is true with the installation of Vault, Consul and Jenkins as minikube will need to download the images first
 
 ### Prerequisites
