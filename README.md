@@ -26,6 +26,13 @@ At the end of the setup you will have:
 - You can resume the demo setup with ```minikube start```. However, you are required to recreate the port-forwarding rules as well as Vault configuration. Since we are running in dev mode, once the pod restarts, it losts all data. (see below to recreate the port-forwarding rules and Vault configuration)<br>
 - The first time you run the pipelines, it may take up to 20 minutes as Jenkins will need to download the container agent images for the first time. Subsequent runs should happen much faster. The same is true with the installation of Vault, Consul and Jenkins as minikube will need to download the images first
 
+### Usage
+
+Once the demo environment is up and running, connect to Jenkins and execute the pipelines to deploy the demo code to Intersight.<br>
+The security-team pipeline can only be executed after the compute-team pipeline, as it will leverage its remote Terraform state file.<br>
+
+The demo environment supports whetever Terraform code you have in your SCM repository, you are definitely encouraged to fork this repo and create additional use cases!
+
 ### Prerequisites
 
 - [minikube](https://minikube.sigs.k8s.io/docs/start/)
