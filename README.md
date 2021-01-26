@@ -117,7 +117,7 @@ Deploy **Vault**
 
 ```
 helm repo add hashicorp https://helm.releases.hashicorp.com
-helm install vault hashicorp/vault \
+helm install vault hashicorp/vault --version 0.8.0 \
     --set "server.dev.enabled=true" \
     --set "injector.enabled=false" \
     --set "ui.enabled=true"
