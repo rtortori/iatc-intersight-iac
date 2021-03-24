@@ -182,7 +182,7 @@ controller:
     - kubernetes:1.27.6
     - workflow-aggregator:2.6
     - git:4.4.5
-    - configuration-as-code:1.46
+    - configuration-as-code:1.47
     - terraform:1.0.10
     - workflow-job:2.40
     - workflow-cps:2.90
