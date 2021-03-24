@@ -35,7 +35,7 @@ The demo environment supports whetever Terraform code you have in your SCM repos
 
 ### Prerequisites
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) - Ensure you reserve at least 4GB Memory for Docker Desktop
 - [minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [helm](https://helm.sh/docs/intro/install/)
 - awk
