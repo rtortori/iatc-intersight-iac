@@ -35,6 +35,7 @@ The demo environment supports whetever Terraform code you have in your SCM repos
 
 ### Prerequisites
 
+- [Docker Desktop](https://www.docker.com/products/docker-desktop)
 - [minikube](https://minikube.sigs.k8s.io/docs/start/)
 - [helm](https://helm.sh/docs/intro/install/)
 - awk
@@ -102,7 +103,7 @@ Deploy **Consul**
 ```
 helm repo add hashicorp https://helm.releases.hashicorp.com
 helm repo update
-helm install -f ./demo-setup/consul/consul_values.yaml consul hashicorp/consul
+helm install -f ./demo-setup/consul/consul_values.yaml consul hashicorp/consul --version 0.29.0
 ```
 
 Deploy **Jenkins**
@@ -110,7 +111,7 @@ Deploy **Jenkins**
 ```
 helm repo add jenkins https://charts.jenkins.io
 helm repo update
-helm install -f ./demo-setup/jenkins/jenkins_values.yaml jenkins jenkins/jenkins
+helm install -f ./demo-setup/jenkins/jenkins_values.yaml jenkins jenkins/jenkins --version 3.1.2
 ```
 
 Deploy **Vault**
