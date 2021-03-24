@@ -185,7 +185,7 @@ controller:
     - configuration-as-code:1.46
     - terraform:1.0.10
     - workflow-job:2.40
-    - workflow-cps:2.89
+    - workflow-cps:2.90
 
   # List of plugins to install in addition to those listed in controller.installPlugins
   additionalPlugins: []
